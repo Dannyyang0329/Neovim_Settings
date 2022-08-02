@@ -2,103 +2,50 @@ local global = require("core.global")
 
 local function load_options()
 	local global_local = {
-		termguicolors = true,
-		mouse = "a",
-		errorbells = true,
-		visualbell = true,
-		hidden = true,
-		fileformats = "unix,mac,dos",
-		magic = true,
-		virtualedit = "block",
-		encoding = "utf-8",
-		viewoptions = "folds,cursor,curdir,slash,unix",
-		sessionoptions = "curdir,help,tabpages,winsize",
-		clipboard = "unnamedplus",
-		wildignorecase = true,
-		wildignore = ".git,.hg,.svn,*.pyc,*.o,*.out,*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store,**/node_modules/**,**/bower_modules/**",
-		backup = false,
-		writebackup = false,
-		swapfile = false,
-		undodir = global.cache_dir .. "undo/",
-		-- directory = global.cache_dir .. "swap/",
-		-- backupdir = global.cache_dir .. "backup/",
-		-- viewdir = global.cache_dir .. "view/",
-		-- spellfile = global.cache_dir .. "spell/en.uft-8.add",
-		history = 2000,
-		shada = "!,'300,<50,@100,s10,h",
-		backupskip = "/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*,.vault.vim",
-		smarttab = true,
-		shiftround = true,
-		timeout = true,
-		ttimeout = true,
-		timeoutlen = 500,
-		ttimeoutlen = 0,
-		updatetime = 100,
-		redrawtime = 1500,
-		ignorecase = true,
-		smartcase = true,
-		infercase = true,
-		incsearch = true,
-		wrapscan = true,
-		complete = ".,w,b,k",
-		inccommand = "nosplit",
-		grepformat = "%f:%l:%c:%m",
-		grepprg = "rg --hidden --vimgrep --smart-case --",
-		breakat = [[\ \	;:,!?]],
-		startofline = false,
-		whichwrap = "h,l,<,>,[,],~",
-		splitbelow = true,
-		splitright = true,
-		switchbuf = "useopen",
-		backspace = "indent,eol,start",
-		diffopt = "filler,iwhite,internal,algorithm:patience",
-		completeopt = "menuone,noselect",
-		jumpoptions = "stack",
-		showmode = false,
-		shortmess = "aoOTIcF",
-		scrolloff = 2,
-		sidescrolloff = 5,
-		foldlevelstart = 99,
-		ruler = true,
-		cursorline = true,
-		cursorcolumn = true,
-		list = true,
-		showtabline = 2,
-		winwidth = 30,
-		winminwidth = 10,
-		pumheight = 15,
-		helpheight = 12,
-		previewheight = 12,
-		showcmd = false,
-		cmdheight = 2,
-		cmdwinheight = 5,
-		equalalways = false,
-		laststatus = 2,
-		display = "lastline",
-		showbreak = "↳  ",
-		listchars = "tab:»·,nbsp:+,trail:·,extends:→,precedes:←",
-		pumblend = 10,
-		winblend = 10,
-		autoread = true,
-		autowrite = true,
+        -- neovim option document : https://neovim.io/doc/user/options.html
 
-		undofile = true,
-		synmaxcol = 2500,
-		formatoptions = "1jcroql",
-		expandtab = true,
-		autoindent = true,
-		tabstop = 4,
-		shiftwidth = 4,
-		softtabstop = 4,
-		breakindentopt = "shift:2,min:20",
-		wrap = false,
-		linebreak = true,
-		number = true,
-		relativenumber = true,
-		foldenable = true,
-		signcolumn = "yes",
-		conceallevel = 0,
-		concealcursor = "niv",
+        -- UI
+		pumblend = 10,                  -- Enables pseudo-transparency for the |popup-menu|.
+		winblend = 10,                  -- Enables pseudo-transparency for a floating window.
+		showtabline = 2,                -- Always show the tabline
+		showbreak = "↳  ",              -- String to put at the start of lines that have been wrapped.
+		wrap = false,                   -- Lines will not wrap and only part of long lines will be displayed.
+		number = true,                  -- Print the line number in front of each line.
+		showmode = false,               -- Don't put a message on the last line.
+		cursorline = true,              -- Highlight the text line of the cursor.
+		signcolumn = "yes",             -- Always show the signcolumn
+		termguicolors = true,           -- Enables 24-bit RGB color in the terminal UI.
+        list = true,                    -- Enable list mode.
+		listchars = "tab:»·,nbsp:+,trail:·,extends:→,precedes:←", -- Strings to use in 'list' mode and for the |:list| command.
+
+        -- Useful option
+		mouse = "a",                    -- Enables mouse support.
+		errorbells = true,              -- Ring the bell for error message.
+		visualbell = true,              -- Use visual bell instead of beeping.
+		ignorecase = true,              -- Ignore case in search patterns. (Override by smartcase)
+		smartcase = true,               -- Override the 'ignorecase' option if the search pattern contains upper case characters.
+		history = 2000,                 -- A history of ':' commands, and a history of previous search patterns are remembered.
+		timeoutlen = 800,               -- Time in milliseconds to wait for a mapped sequence to complete.
+		ttimeoutlen = 0,                -- Time in milliseconds to wait for a key code sequence to complete.
+		scrolloff = 5,                  -- Minimal number of screen lines to keep above and below the cursor.
+		sidescrolloff = 10,             -- The minimal number of screen columns to keep to the left and to the right of the cursor if 'nowrap' is set.
+
+		equalalways = false,            -- Splitting a window will reduce the size of the current window and leave the other windows the same.
+		encoding = "utf-8",             -- Sets the character encoding used inside Vim.
+
+        -- Backup & Buffer
+		autowrite = true,               -- Write the contents of the file, if it has been modified
+		undofile = true,                -- Vim automatically saves undo history to an undo file when writing a buffer to a file, and restores undo history from the same file on buffer read.
+		swapfile = false,               -- Do not use a swapfile for the buffer.
+
+        -- Tab & Indent
+		shiftwidth = 4,                 -- Number of spaces to use for (auto) indentation.
+		shiftround = true,              -- Round indent to multiple of 'shiftwidth'.
+		tabstop = 4,                    -- Number of spaces that a <Tab> in the file counts for.
+		softtabstop = 4,                -- Number of spaces that a <Tab> counts for while performing editing operations
+		smarttab = true,                -- A tab in front of a line inserts blanks according to 'shiftwidth'.
+		expandtab = true,               -- In insert mode, use the appropriate number of spaces to insert a tab.
+		smartindent = true,             -- Do an auto indentation when starting a new line.
 	}
 
 	if global.is_mac then
