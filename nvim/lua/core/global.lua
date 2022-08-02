@@ -18,7 +18,7 @@ function global:load_variables()
     -- Get the string of environment variable. eg. /home/danny in ubuntu
 	self.home = self.is_windows and os.getenv("USERPROFILE") or os.getenv("HOME")
     -- cache_dir = /home/danny/.cache/nvim/
-	self.cache_dir = home .. path_sep .. ".cache" .. path_sep .. "nvim" .. path_sep
+	self.cache_dir = self.home .. path_sep .. ".cache" .. path_sep .. "nvim" .. path_sep
     -- modules_dir = /home/danny/.config/nvim/modules
 	self.modules_dir = self.vim_path .. path_sep .. "modules"
     -- data_dir = /home/danny/.local/share/nvim/site/
