@@ -85,6 +85,7 @@ local load_core = function()
 	pack.load_compile()
 
 	vim.cmd([[colorscheme catppuccin]])
+    vim.cmd([[highlight IndentBlanklineContextChar guifg=#F2E767]])
 end
 
 load_core()

@@ -1,28 +1,23 @@
 local config = {}
 
+-- A fast and fully customizable greeter for neovim.
 function config.alpha()
 	local alpha = require("alpha")
 	local dashboard = require("alpha.themes.dashboard")
 
 	dashboard.section.header.val = {
-        [[┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── ─┐]],
-        [[│ ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ │]],
-        [[│ │                                                                                                                                      │ │]],
-        [[│ │                                                                                                                                      │ │]],
-        [[│ │  $$$$$$$\                                                                                   $$$$$$\   $$$$$$\   $$$$$$\   $$$$$$\    │ │]],
-        [[│ │  $$  __$$\                                                                                 $$$ __$$\ $$ ___$$\ $$  __$$\ $$  __$$\   │ │]],
-        [[│ │  $$ |  $$ | $$$$$$\  $$$$$$$\  $$$$$$$\  $$\   $$\ $$\   $$\  $$$$$$\  $$$$$$$\   $$$$$$\  $$$$\ $$ |\_/   $$ |\__/  $$ |$$ /  $$ |  │ │]],
-        [[│ │  $$ |  $$ | \____$$\ $$  __$$\ $$  __$$\ $$ |  $$ |$$ |  $$ | \____$$\ $$  __$$\ $$  __$$\ $$\$$\$$ |  $$$$$ /  $$$$$$  |\$$$$$$$ |  │ │]],
-        [[│ │  $$ |  $$ | $$$$$$$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |$$ |  $$ | $$$$$$$ |$$ |  $$ |$$ /  $$ |$$ \$$$$ |  \___$$\ $$  ____/  \____$$ |  │ │]],
-        [[│ │  $$ |  $$ |$$  __$$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |$$  __$$ |$$ |  $$ |$$ |  $$ |$$ |\$$$ |$$\   $$ |$$ |      $$\   $$ |  │ │]],
-        [[│ │  $$$$$$$  |\$$$$$$$ |$$ |  $$ |$$ |  $$ |\$$$$$$$ |\$$$$$$$ |\$$$$$$$ |$$ |  $$ |\$$$$$$$ |\$$$$$$  /\$$$$$$  |$$$$$$$$\ \$$$$$$  |  │ │]],
-        [[│ │  \_______/  \_______|\__|  \__|\__|  \__| \____$$ | \____$$ | \_______|\__|  \__| \____$$ | \______/  \______/ \________| \______/   │ │]],
-        [[│ │                                          $$\   $$ |$$\   $$ |                    $$\   $$ |                                          │ │]],
-        [[│ │                                          \$$$$$$  |\$$$$$$  |                    \$$$$$$  |                                          │ │]],
-        [[│ │                                           \______/  \______/                      \______/                                           │ │]],
-        [[│ │                                                                                                                                      │ │]],
-        [[│ └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ │]],
-        [[└──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘]],
+        [[┌────────────────────────────────────────────────────────────────┐]],
+        [[│ ┌────────────────────────────────────────────────────────────┐ │]],
+        [[│ │                                                            │ │]],
+        [[│ │   ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗   │ │]],
+        [[│ │   ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║   │ │]],
+        [[│ │   ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║   │ │]],
+        [[│ │   ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║   │ │]],
+        [[│ │   ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║   │ │]],
+        [[│ │   ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝   │ │]],
+        [[│ │                                                            │ │]],
+        [[│ └────────────────────────────────────────────────────────────┘ │]],
+        [[└────────────────────────────────────────────────────────────────┘]],
 	}
 
 	local function button(sc, txt, leader_txt, keybind, keybind_opts)
@@ -44,7 +39,6 @@ function config.alpha()
 		opts.keymap = { "n", sc_after, keybind, keybind_opts }
 
 		local function on_press()
-			-- local key = vim.api.nvim_replace_termcodes(keybind .. '<Ignore>', true, false, true)
 			local key = vim.api.nvim_replace_termcodes(sc_after .. "<Ignore>", true, false, true)
 			vim.api.nvim_feedkeys(key, "t", false)
 		end
@@ -103,24 +97,7 @@ function config.alpha()
 	alpha.setup(dashboard.opts)
 end
 
-function config.edge()
-	vim.g.edge_style = "aura"
-	vim.g.edge_enable_italic = 1
-	vim.g.edge_disable_italic_comment = 1
-	vim.g.edge_show_eob = 1
-	vim.g.edge_better_performance = 1
-	vim.g.edge_transparent_background = 1
-end
-
-function config.nord()
-	vim.g.nord_contrast = true
-	vim.g.nord_borders = false
-	vim.g.nord_cursorline_transparent = true
-	vim.g.nord_disable_background = false
-	vim.g.nord_enable_sidebar_background = true
-	vim.g.nord_italic = true
-end
-
+-- A soothing pastel dark theme
 function config.catppuccin()
 	require("catppuccin").setup({
 		transparent_background = false,
@@ -171,17 +148,18 @@ function config.catppuccin()
 	})
 end
 
+-- Notify with animation
 function config.notify()
 	local notify = require("notify")
 	notify.setup({
 		---@usage Animation style one of { "fade", "slide", "fade_in_slide_out", "static" }
-		stages = "slide",
+		stages = "fade_in_slide_out",
 		---@usage Function called when a new window is opened, use for changing win settings/config
 		on_open = nil,
 		---@usage Function called when a window is closed
 		on_close = nil,
 		---@usage timeout for notifications in ms, default 5000
-		timeout = 2000,
+		timeout = 3000,
 		-- Render function for notifications. See notify-render()
 		render = "default",
 		---@usage highlight behind the window for stages that change opacity
@@ -197,17 +175,12 @@ function config.notify()
 			TRACE = "✎",
 		},
 	})
-
 	vim.notify = notify
 end
 
+-- Customizable status line in bottom
 function config.lualine()
 	local gps = require("nvim-gps")
-
-	local function escape_status()
-		local ok, m = pcall(require, "better_escape")
-		return ok and m.waiting and "✺ " or ""
-	end
 
 	local function gps_content()
 		if gps.is_available() then
@@ -297,7 +270,6 @@ function config.lualine()
 				{ gps_content, cond = gps.is_available },
 			},
 			lualine_x = {
-				{ escape_status },
 				{
 					"diagnostics",
 					sources = { "nvim_diagnostic" },
@@ -343,6 +315,7 @@ function config.lualine()
 	})
 end
 
+-- Show current context in lualine
 function config.nvim_gps()
 	require("nvim-gps").setup({
 		icons = {
@@ -354,40 +327,26 @@ function config.nvim_gps()
 			-- You can disable any language individually here
 			["c"] = true,
 			["cpp"] = true,
-			["go"] = true,
 			["java"] = true,
 			["javascript"] = true,
 			["lua"] = true,
 			["python"] = true,
-			["rust"] = true,
 		},
 		separator = " > ",
 	})
 end
 
+-- Show file structure tree
 function config.nvim_tree()
+    -- Docs : https://github.com/kyazdani42/nvim-tree.lua/blob/master/doc/nvim-tree-lua.txt
 	require("nvim-tree").setup({
-		respect_buf_cwd = true,
-		auto_reload_on_write = true,
-		disable_netrw = false,
-		hijack_cursor = true,
-		hijack_netrw = true,
-		hijack_unnamed_buffer_when_opening = false,
-		ignore_buffer_on_setup = false,
-		open_on_setup = false,
-		open_on_setup_file = false,
-		open_on_tab = false,
-		sort_by = "name",
-		update_cwd = true,
+		respect_buf_cwd = true,     -- Will change cwd of nvim-tree to that of new buffer's when opening nvim-tree.
+		hijack_cursor = true,   -- Keeps the cursor on the first letter of the filename when moving in the tree.
+		update_cwd = true, -- Changes the tree root directory on `DirChanged` and refreshes the tree.
 		view = {
 			width = 30,
 			height = 30,
 			side = "left",
-			preserve_window_proportions = false,
-			number = false,
-			relativenumber = false,
-			signcolumn = "yes",
-			hide_root_folder = false,
 		},
 		renderer = {
 			indent_markers = {
@@ -415,8 +374,6 @@ function config.nvim_tree()
 						["ignored"] = "", --◌
 					},
 					["folder"] = {
-						-- ['arrow_open'] = "",
-						-- ['arrow_closed'] = "",
 						["arrow_open"] = "",
 						["arrow_closed"] = "",
 						["default"] = "",
@@ -466,6 +423,7 @@ function config.nvim_tree()
 	})
 end
 
+-- Tab/Tabline and buffer management
 function config.nvim_bufferline()
 	require("bufferline").setup({
 		options = {
@@ -482,7 +440,7 @@ function config.nvim_bufferline()
 			show_tab_indicators = true,
 			diagnostics = "nvim_lsp",
 			always_show_bufferline = true,
-			separator_style = "thin",
+            separator_style = "thin",
 			offsets = {
 				{
 					filetype = "NvimTree",
@@ -498,6 +456,7 @@ function config.nvim_bufferline()
 	})
 end
 
+-- Show git status in nvim
 function config.gitsigns()
 	require("gitsigns").setup({
 		signs = {
@@ -567,10 +526,26 @@ function config.gitsigns()
 	})
 end
 
+-- Show indent with different level
 function config.indent_blankline()
+    vim.cmd [[highlight IndentBlanklineIndent1 guifg=#0039a6 gui=nocombine]]
+    vim.cmd [[highlight IndentBlanklineIndent2 guifg=#0065cc gui=nocombine]]
+    vim.cmd [[highlight IndentBlanklineIndent3 guifg=#007FFF gui=nocombine]]
+    vim.cmd [[highlight IndentBlanklineIndent4 guifg=#6CB4EE gui=nocombine]]
+    vim.cmd [[highlight IndentBlanklineIndent5 guifg=#89CFF0 gui=nocombine]]
+
 	require("indent_blankline").setup({
-		char = "│",
+		space_char_blankline = " ",
+		show_current_context = true,
 		show_first_indent_level = true,
+		show_trailing_blankline_indent = false,
+        char_highlight_list = {
+            "IndentBlanklineIndent1",
+            "IndentBlanklineIndent2",
+            "IndentBlanklineIndent3",
+            "IndentBlanklineIndent4",
+            "IndentBlanklineIndent5",
+        },
 		filetype_exclude = {
 			"startify",
 			"dashboard",
@@ -594,9 +569,6 @@ function config.indent_blankline()
 			"flutterToolsOutline",
 			"", -- for all buffers without a file type
 		},
-		buftype_exclude = { "terminal", "nofile" },
-		show_trailing_blankline_indent = false,
-		show_current_context = true,
 		context_patterns = {
 			"class",
 			"function",
@@ -613,18 +585,15 @@ function config.indent_blankline()
 			"var",
 			"import",
 		},
-		space_char_blankline = " ",
 	})
 	-- because lazy load indent-blankline so need readd this autocmd
 	vim.cmd("autocmd CursorMoved * IndentBlanklineRefresh")
+    vim.cmd("highlight IndentBlanklineContextChar guifg=#f2E767")
 end
 
+-- scrollable scrollbar
 function config.scrollview()
 	require("scrollview").setup({})
-end
-
-function config.fidget()
-	require("fidget").setup({})
 end
 
 return config
