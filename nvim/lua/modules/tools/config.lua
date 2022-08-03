@@ -1,24 +1,16 @@
 local config = {}
 
+-- Find, Filter, Preview, Pick Tool
 function config.telescope()
 	vim.cmd([[packadd sqlite.lua]])
+    -- vim.cmd [[
+    --    let g:sqlite_clib_path = 'path/to/sqlite3.dll'
+    --    packadd sqlite.lua
+    --]]
 	vim.cmd([[packadd telescope-fzf-native.nvim]])
 	vim.cmd([[packadd telescope-project.nvim]])
 	vim.cmd([[packadd telescope-frecency.nvim]])
 	vim.cmd([[packadd telescope-zoxide]])
-
-	local telescope_actions = require("telescope.actions.set")
-	local fixfolds = {
-		hidden = true,
-		attach_mappings = function(_)
-			telescope_actions.select:enhance({
-				post = function()
-					vim.cmd(":normal! zx")
-				end,
-			})
-			return true
-		end,
-	}
 
 	require("telescope").setup({
 		defaults = {
@@ -28,7 +20,6 @@ function config.telescope()
 			entry_prefix = " ",
 			scroll_strategy = "limit",
 			results_title = false,
-			borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
 			layout_strategy = "horizontal",
 			path_display = { "absolute" },
 			file_ignore_patterns = {},
@@ -73,6 +64,7 @@ function config.telescope()
 	require("telescope").load_extension("frecency")
 end
 
+-- Show code trouble
 function config.trouble()
 	require("trouble").setup({
 		position = "bottom", -- position of the list can be: bottom, top, left, right
@@ -121,50 +113,47 @@ function config.trouble()
 	})
 end
 
+-- Run code snippet quickly
 function config.sniprun()
 	require("sniprun").setup({
 		selected_interpreters = {}, -- " use those instead of the default for the current filetype
 		repl_enable = {}, -- " enable REPL-like behavior for the given interpreters
 		repl_disable = {}, -- " disable REPL-like behavior for the given interpreters
 		interpreter_options = {}, -- " intepreter-specific options, consult docs / :SnipInfo <name>
-		-- " you can combo different display modes as desired
-		display = {
+		-- " you can combo different display modes as desireddisplay
+        display = {
 			"Classic", -- "display results in the command-line  area
 			"VirtualTextOk", -- "display ok results as virtual text (multiline is shortened)
 			"VirtualTextErr", -- "display error results as virtual text
-			-- "TempFloatingWindow",      -- "display results in a floating window
 			"LongTempFloatingWindow", -- "same as above, but only long results. To use with VirtualText__
-			-- "Terminal"                 -- "display results in a vertical split
 		},
 		-- " miscellaneous compatibility/adjustement settings
 		inline_messages = 0, -- " inline_message (0/1) is a one-line way to display messages
 		-- " to workaround sniprun not being able to display anything
-
 		borders = "shadow", -- " display borders around floating windows
 		-- " possible values are 'none', 'single', 'double', or 'shadow'
-	})
+    })
 end
 
+-- Displays a popup with possible key bindings of the command
 function config.which_key()
 	require("which-key").setup({
 		plugins = {
 			presets = {
-				operators = false,
-				motions = false,
-				text_objects = false,
-				windows = false,
-				nav = false,
+				operators = true,
+				motions = true,
+				text_objects = true,
+				windows = true,
+				nav = true,
 				z = true,
 				g = true,
 			},
 		},
-
 		icons = {
 			breadcrumb = "»",
 			separator = "│",
 			group = "+",
 		},
-
 		window = {
 			border = "none",
 			position = "bottom",
@@ -172,32 +161,47 @@ function config.which_key()
 			padding = { 1, 1, 1, 1 },
 			winblend = 0,
 		},
+        popup_mappings = {
+            scroll_down = '<c-j>', -- binding to scroll down inside the popup
+            scroll_up = '<c-k>', -- binding to scroll up inside the popup
+        },
 	})
 end
 
+-- A more adventurous wildmenu
 function config.wilder()
 	vim.cmd([[
 call wilder#setup({'modes': [':', '/', '?']})
-call wilder#set_option('use_python_remote_plugin', 0)
+
 call wilder#set_option('pipeline', [wilder#branch(
-	\ wilder#cmdline_pipeline({'use_python': 0,'fuzzy': 1, 'fuzzy_filter': wilder#lua_fzy_filter()}),
-	\ wilder#vim_search_pipeline(),
-	\ [wilder#check({_, x -> empty(x)}), wilder#history(), wilder#result({'draw': [{_, x -> ' ' . x}]})]
-	\ )])
+	\ wilder#cmdline_pipeline({
+    \   'use_python': 0,
+    \   'fuzzy': 1,
+    \   'fuzzy_filter': wilder#lua_fzy_filter()
+    \ }),
+	\ wilder#vim_search_pipeline(), [
+    \   wilder#check({_, x -> empty(x)}),
+    \   wilder#history(),
+    \   wilder#result({'draw': [{_, x -> ' ' . x}]})
+	\ ])])
+
 call wilder#set_option('renderer', wilder#renderer_mux({
-	\ ':': wilder#popupmenu_renderer({
-		\ 'highlighter': wilder#lua_fzy_highlighter(),
-		\ 'left': [wilder#popupmenu_devicons()],
-		\ 'right': [' ', wilder#popupmenu_scrollbar()]
-		\ }),
-	\ '/': wilder#wildmenu_renderer({
-		\ 'highlighter': wilder#lua_fzy_highlighter(),
-		\ 'apply_incsearch_fix': v:true,
-		\})
+        \ ':': wilder#popupmenu_renderer(wilder#popupmenu_border_theme({
+        \     'border': 'rounded',
+        \     'highlights': { 'border': 'Normal', },
+        \     'highlighter': wilder#lua_fzy_highlighter(),
+        \     'left': [wilder#popupmenu_devicons()],
+        \     'right': [' ', wilder#popupmenu_scrollbar()]
+        \ })),
+        \ '/': wilder#wildmenu_renderer({
+        \     'highlighter': wilder#lua_fzy_highlighter(),
+        \     'apply_incsearch_fix': v:true,
+        \ })
 	\ }))
 ]])
 end
 
+-- Easily speed up your neovim startup time
 function config.filetype()
 	-- In init.lua or filetype.nvim's config file
 	require("filetype").setup({
