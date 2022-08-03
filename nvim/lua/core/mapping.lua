@@ -10,7 +10,8 @@ local def_map = {
 	["n|<C-l>"] = map_cmd("<C-w>l"):with_noremap(),            -- Ctrl+l : move to right window
 	["n|<C-j>"] = map_cmd("<C-w>j"):with_noremap(),            -- Ctrl+j : move to bottom window
 	["n|<C-k>"] = map_cmd("<C-w>k"):with_noremap(),            -- Ctrl+k : move to top window
-	["n|<C-a>"] = map_cmd("ggVG"):with_noremap(),              -- Ctrl+a : select all file
+	["n|<C-a>"] = map_cmd("ggVG"):with_noremap(),              -- Ctrl+a : select all
+	["n|<C-o>"] = map_cmd("ggVGzO"):with_noremap(),            -- Ctrl+o : open all fold
 	["n|<C-s>"] = map_cu("write"):with_noremap(),              -- Ctrl+s : save
 	["n|<C-q>"] = map_cmd(":wq<CR>"),                          -- Ctrl+q : save and quit
 
