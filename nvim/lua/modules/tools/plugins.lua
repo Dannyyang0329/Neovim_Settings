@@ -17,23 +17,25 @@ tools["nvim-telescope/telescope.nvim"] = {
 	},
 }
 
+-- Fuzzy find
 tools["nvim-telescope/telescope-fzf-native.nvim"] = {
 	opt = true,
 	run = "make",
 	after = "telescope.nvim",
 }
 
-
+-- Manage project
 tools["nvim-telescope/telescope-project.nvim"] = {
 	opt = true,
 	after = "telescope-fzf-native.nvim",
 }
 
-
+-- Frequent and recent file jump
 tools["nvim-telescope/telescope-frecency.nvim"] = {
 	opt = true,
 	after = "telescope-project.nvim",
-	requires = { { "tami5/sqlite.lua", opt = true } },
+	-- requires = { { "tami5/sqlite.lua", opt = true } },
+	requires = { { "kkharji/sqlite.lua", opt = true } },
 }
 
 
