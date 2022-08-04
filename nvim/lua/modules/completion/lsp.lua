@@ -15,6 +15,7 @@ mason.setup()
 mason_lsp.setup({
 	ensure_installed = {
 		"bash-language-server",
+        "efm",
 		"lua-language-server",
 		"clangd",
 		"pyright",
