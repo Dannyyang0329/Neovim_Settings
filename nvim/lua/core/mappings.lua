@@ -12,9 +12,9 @@ vim.api.nvim_set_keymap('i', '<C-s>', '<Esc>:w<CR>', {})                -- Ctrl+
 vim.api.nvim_set_keymap('i', '<C-q>', '<Esc>:wq<CR>', {})               -- Ctrl+q : save and quit
 
 -- Command mode
-vim.api.nvim_set_keymap('c', '<C-h>', '<Left>', {noremap = true})       -- Ctrl+h : move left
-vim.api.nvim_set_keymap('c', '<C-l>', '<Right>', {noremap = true})      -- Ctrl+l : move right
-vim.api.nvim_set_keymap('c', '<C-j>', '<Home>', {noremap = true})       -- Ctrl+j : move left
-vim.api.nvim_set_keymap('c', '<C-k>', '<End>', {noremap = true})        -- Ctrl+k : move to head
-vim.api.nvim_set_keymap('c', '<C-d>', '<BS>', {noremap = true})         -- Ctrl+d : move to tail
+vim.api.nvim_set_keymap('c', '<C-h>', '<Left>', {})                     -- Ctrl+h : move left
+vim.api.nvim_set_keymap('c', '<C-l>', '<Right>', {})                    -- Ctrl+l : move right
+vim.api.nvim_set_keymap('c', '<C-j>', '<Home>', {})                     -- Ctrl+j : move left
+vim.api.nvim_set_keymap('c', '<C-k>', '<End>', {})                      -- Ctrl+k : move to head
+vim.api.nvim_set_keymap('c', '<C-d>', '<BS>', {})                       -- Ctrl+d : move to tail
 

@@ -1,9 +1,24 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
+    -- Packer
     use { "wbthomason/packer.nvim" }
 
+    -- Tools
+    use { "nvim-lua/popup.nvim" }
     use { "nvim-lua/plenary.nvim" }
+    use { "kkharji/sqlite.lua" }
+    use { "nvim-telescope/telescope.nvim" }
+    use { "nvim-telescope/telescope-fzf-native.nvim", run = 'make'}
+    use { "nvim-telescope/telescope-project.nvim" }
+    use { "nvim-telescope/telescope-frecency.nvim" }
+    use { "jvgrootveld/telescope-zoxide" }
+    use { "michaelb/sniprun", run = "bash ./install.sh" }
+    use { "folke/which-key.nvim" }
+    use { "folke/trouble.nvim" }
+    use { "gelguy/wilder.nvim", 
+        requires = { { "romgrk/fzy-lua-native", after = "wilder.nvim" } },
+    }
 
     -- UI
     use { "kyazdani42/nvim-web-devicons" }

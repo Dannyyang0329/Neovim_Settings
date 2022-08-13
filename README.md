@@ -2,6 +2,23 @@
 
 # Plugin
 
+## Tools
+|  Plugin  | Introduction |
+| :-: | :-: |
+| [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim) | Required by telescope.nvim |
+| [nvim-lua/popup.nvim](https://github.com/nvim-lua/popup.nvim) | Required by telescope.nvim |
+| [kkharji/sqlite.lua](kkharji/sqlite.lua) | Required by telescope-frecency.nvim |
+| [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) | An extendable fuzzy finder |
+| [nvim-telescope/telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim) | Fzf searching |
+| [nvim-telescope/telescope-project.nvim](https://github.com/nvim-telescope/telescope-project.nvim) | Project searching |
+| [nvim-telescope/telescope-frecency.nvim](https://github.com/nvim-telescope/telescope-frecency.nvim) | Search file with frequency |
+| [jvgrootveld/telescope-zoxide](https://github.com/jvgrootveld/telescope-zoxide) | Jump to folder recored by zoxide |
+| [michaelb/sniprun](https://github.com/michaelb/sniprun) | Run code snippet |
+| [folke/which-key.nvim](https://github.com/folke/which-key.nvim) | Show key binding |
+| [folke/trouble.nvim](https://github.com/folke/trouble.nvim) | Show code troubles |
+| [gelguy/wilder.nvim](https://github.com/gelguy/wilder.nvim) | A more adventurous wildmenu |
+
+
 ## UI
 |  Plugin  | Introduction |
 | :-: | :-: |
