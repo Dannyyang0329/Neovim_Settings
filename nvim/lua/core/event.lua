@@ -1,6 +1,7 @@
 local definitions = {
     packer = {},
     bufs = {
+        -- Close NvimTree if it's the last window remaining
         {
             "BufEnter",
             "*",
