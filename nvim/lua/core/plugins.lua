@@ -4,6 +4,19 @@ return require('packer').startup(function(use)
     -- Packer
     use { "wbthomason/packer.nvim" }
 
+    -- Editor
+    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+    use { "RRethy/vim-illuminate" }
+    use { "JoosepAlviste/nvim-ts-context-commentstring" }
+    use { "terrortylor/nvim-comment" }
+    use { "p00f/nvim-ts-rainbow" }
+    use { "windwp/nvim-ts-autotag" }
+    use { "karb94/neoscroll.nvim" }
+    use { "akinsho/toggleterm.nvim" }
+    use { "norcalli/nvim-colorizer.lua" }
+    use { "sindrets/diffview.nvim" }
+
+
     -- Tools
     use { "nvim-lua/popup.nvim" }
     use { "nvim-lua/plenary.nvim" }

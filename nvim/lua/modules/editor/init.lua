@@ -1,0 +1,6 @@
+require('modules/editor/illuminate_config')
+require('modules/editor/nvim_comment_config')
+require('modules/editor/nvim_treesitter_config')
+require('modules/editor/neoscroll_config')
+require('modules/editor/toggleterm_config')
+require('modules/editor/nvim_colorizer_config')

@@ -1,5 +1,15 @@
 vim.g.mapleader = ","
 
+-- editor
+-- nvim-comment
+vim.api.nvim_set_keymap('n', '<Leader>/', ':CommentToggle<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<Leader>/', ':CommentToggle<CR>', {noremap = true, silent = true})
+-- toggleterm
+vim.api.nvim_set_keymap('n', '<C-t>', ':ToggleTerm<CR>', {noremap = true, silent = true})
+-- diffview
+vim.api.nvim_set_keymap('n', '<Leader>dv', ':DiffviewOpen<CR>', {noremap = true, silent = true})
+
+
 -- tools
 -- telescope
 vim.api.nvim_set_keymap('n', '<Leader>fp', ':lua require("telescope").extensions.project.project{}<CR>', {noremap = true, silent = true})
@@ -15,7 +25,6 @@ vim.api.nvim_set_keymap('n', '<Leader>km', ':Telescope keymaps<CR>', {noremap = 
 vim.api.nvim_set_keymap('v', '<Leader>r', ":SnipRun<CR>", {noremap = true})
 -- trouble
 vim.api.nvim_set_keymap('n', '<Leader>tr', ":TroubleToggle<CR>", {noremap = true, silent = true})
-
 
 
 -- ui
