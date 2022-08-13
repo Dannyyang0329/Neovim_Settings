@@ -2,6 +2,22 @@
 
 # Plugin
 
+## Editor
+|  Plugin  | Introduction |
+| :-: | :-: |
+| [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate) | Highlight all the word under the cursor |
+| [JoosepAlviste/nvim-ts-context-commentstring](JoosepAlviste/nvim-ts-context-commentstring) | Comment string |
+| [terrortylor/nvim-comment](https://github.com/terrortylor/nvim-comment) | Quick comment |
+| [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | Code highlighter |
+| [p00f/nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow) | Rainbow brackets |
+| [windwp/nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag) | Autoclose and autorename html tag |
+| [karb94/neoscroll.nvim](https://github.com/karb94/neoscroll.nvim) | Smooth scroll |
+| [akinsho/toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim) | Toggle terminal |
+| [norcalli/nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua) | Show detected color |
+| [sindrets/diffview.nvim](https://github.com/sindrets/diffview.nvim) | Show git diff view |
+
+
+
 ## Tools
 |  Plugin  | Introduction |
 | :-: | :-: |
