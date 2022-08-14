@@ -4,6 +4,29 @@ return require('packer').startup(function(use)
     -- Packer
     use { "wbthomason/packer.nvim" }
 
+    -- Completion & Language sercer
+    use { "neovim/nvim-lspconfig" }
+    use { "williamboman/mason.nvim" }
+    use { "williamboman/mason-lspconfig.nvim" }
+    use { "WhoIsSethDaniel/mason-tool-installer.nvim" }
+    use { "glepnir/lspsaga.nvim" }
+    use { "ray-x/lsp_signature.nvim" }
+    use { "hrsh7th/nvim-cmp",
+        requires = {
+            { "saadparwaiz1/cmp_luasnip" },
+            { "hrsh7th/cmp-nvim-lsp" },
+            { "hrsh7th/cmp-buffer" },
+            { "hrsh7th/cmp-path" },
+            { "hrsh7th/cmp-nvim-lua" },
+            { "hrsh7th/cmp-cmdline" },
+        },
+    }
+    use { "L3MON4D3/LuaSnip",
+        requires = { "rafamadriz/friendly-snippets" },
+    }
+    use { "windwp/nvim-autopairs" }
+    use { "github/copilot.vim" }
+
     -- Editor
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
     use { "RRethy/vim-illuminate" }

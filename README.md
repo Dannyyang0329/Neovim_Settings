@@ -5,6 +5,21 @@
 ## Editor
 |  Plugin  | Introduction |
 | :-: | :-: |
+| [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) | Neovim LSP configuration |
+| [williamboman/mason.nvim](https://github.com/williamboman/mason.nvim) | Install and manage LSP |
+| [williamboman/mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim) | Required by mason.nvim |
+| [WhoIsSethDaniel/mason-tool-installer.nvim](https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim) | Required by mason.nvim |
+| [glepnir/lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim) | Better lsp function |
+| [ray-x/lsp_signature.nvim](https://github.com/ray-x/lsp_signature.nvim) | Show signature when completing function parameters |
+| [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp) | Auto completion plugin for nvim |
+| [L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip) | Snippets completion engine for nvim-cmp |
+| [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs) | Pairs completion |
+| [github/copilot](https://github.com/github/copilot.vim) | Github Copilot |
+
+
+## Editor
+|  Plugin  | Introduction |
+| :-: | :-: |
 | [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate) | Highlight all the word under the cursor |
 | [JoosepAlviste/nvim-ts-context-commentstring](JoosepAlviste/nvim-ts-context-commentstring) | Comment string |
 | [terrortylor/nvim-comment](https://github.com/terrortylor/nvim-comment) | Quick comment |
