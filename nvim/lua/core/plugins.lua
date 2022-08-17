@@ -55,6 +55,10 @@ return require('packer').startup(function(use)
     use { "gelguy/wilder.nvim", 
         requires = { { "romgrk/fzy-lua-native", after = "wilder.nvim" } },
     }
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
 
     -- UI
     use { "kyazdani42/nvim-web-devicons" }

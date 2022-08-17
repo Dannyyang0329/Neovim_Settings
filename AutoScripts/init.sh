@@ -12,4 +12,4 @@ sudo apt-get install gnome-tweaks
 # git cz 
 sudo apt-get install npm -y
 sudo npm install -g commitizen
-commitizen init cz-conventional-changelog --save-dev --save-exact
+# commitizen init cz-conventional-changelog --save-dev --save-exact
