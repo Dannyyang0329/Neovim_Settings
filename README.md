@@ -243,3 +243,58 @@ lua
 
     ![](https://i.imgur.com/KBgC6WU.png)
 
+### UI
+
+* UI
+
+    ![](https://i.imgur.com/v7s1Lwq.png)
+    ![](https://i.imgur.com/4Irfoat.png)
+
+
+## Mapping
+
+* Normal mapping
+
+    | Mode | Key | Function |
+    | :--: | :-: | :------: |
+    | Normal | \<C-h> | move to left window |
+    | Normal | \<C-l> | move to right window |
+    | Normal | \<C-j> | move to bottom window |
+    | Normal | \<C-k> | move to top window |
+    | Normal | \<C-a> | select all |
+    | Normal | \<C-s> | save |
+    | Normal | \<C-q> | save and quit |
+    | Normal | \<C-c> | delete current buffer |
+    | Insert | \<C-s> | save |
+    | Insert | \<C-q> | save and quit |
+    | Command | \<C-h> | move to left character |
+    | Command | \<C-l> | move to right character |
+    | Command | \<C-j> | move to first character |
+    | Command | \<C-k> | move to last character |
+    | Command | \<C-d> | Delete a character | |
+
+    
+* Plugin mapping
+    
+    Most of the command using comma `,` as a `<Leader>`.
+    | Plugin | Mode | Key | Function |
+    | :----: | :--: | :-: | :------: |
+    | Copilot | Insert | \<C-y> | Using the suggestion code |
+    | nvim-comment | Normal | \<Leader>/ | Comment current line |
+    | nvim-comment | Visual | \<Leader>/ | Comment selected lines |
+    | toggleterm | Normal | \<C-t> | Popup floating terminal |
+    | diffview | Normal | \<Leader>dv | Open different view |
+    | telescope | Normal | \<Leader>fp | Find or Create project |
+    | telescope | Normal | \<Leader>fr | Find recent used file |
+    | telescope | Normal | \<Leader>fo | Find old files |
+    | telescope | Normal | \<Leader>ff | Find files |
+    | telescope | Normal | \<Leader>fw | Find words |
+    | telescope | Normal | \<Leader>fg | Find git files |
+    | telescope | Normal | \<Leader>fz | Find zoxide list |
+    | telescope | Normal | \<Leader>cs | Change colorscheme |
+    | telescope | Normal | \<Leader>km | Show key mapping |
+    | sniprun | Visual | \<Leader>r | Run selected snippet |
+    | trouble | Normal | \<Leader>tr | Show trouble winodw |
+    | nvim-tree | Normal | \<C-n> | Show file explorer |
+    | tabline | Normal | \<Tab> | Move to next buffer |
+    | tabline | Normal | \<S-Tab> | Move to preview buffer |
