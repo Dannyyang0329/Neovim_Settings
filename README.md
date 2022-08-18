@@ -6,23 +6,52 @@ This is the setting of my neovim with a lot of usefull plugins.
 Notice : the version of neovim should be >= `0.8.0`
 
 
-## Usage
-I write some scripts in `AutoScripts` folder to make setting easier. 
+## Install
 
-`init.sh` : Install necessary packages.
+Install git for cloning the repository  
+```
+sudo apt-get install git
+```
+
+Get this repository  
+```
+git clone https://github.com/Dannyyang0329/Neovim_Settings.git
+```
+
+Change current directory  
+```
+cd Neovim_Settings/AutoScripts/
+```  
+
+`init.sh` : Install necessary packages.  
 ```
 ./init.sh
 ```
 
-`install.sh` : Install neovim and the packages the plugin needed
+`install.sh` : Install neovim and the packages the plugin needed  
 ```
 ./install.sh
 ```
 
-`setting.sh` : Apply the setting
+`setting.sh` : Apply the setting  
 ```
 ./setting.sh
 ```
+
+Open gnome-tweak to change the caps behavior and font
+```
+Keyboard & Mouse
+-> Addition Layout Options
+-> Caps Lock behavior 
+-> Make Caps Lock an additional Esc
+```
+```
+Fonts
+-> Monospace Text
+-> SauceCodePro NF Regular 18
+```
+
+**Notice : When first open neovim editor, you should wait about 1 minute to let `mason` installing LSP.**
 
 
 ## Structure 

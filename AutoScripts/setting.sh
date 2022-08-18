@@ -11,13 +11,17 @@ else
     if [ -e "~/.config/nvim" -a -d "~/.config/nvim" ]; then
         echo "!/.config/nvim is exist. Please make a backup or delete it."
     else
-        # get the setting from git
-        git clone https://github.com/Dannyyang0329/Neovim_Settings.git
-        
         # apply setting
         cp -r nvim ~/.config/nvim
 
-        vim -c :PackerSync
+        nvim -c :PackerSync
+
+        # change prompt style
+        echo 'POWERLINE_SCRIPT=/usr/share/powerline/bindings/bash/powerline.sh' >> ~/.bashrc
+        echo 'if [ -f $POWERLINE_SCRIPT ]; then' >> ~/.bashrc
+        echo '  source $POWERLINE_SCRIPT' >> ~/.bashrc
+        echo 'fi' >> ~/.bashrc
+        source ~/.bashrc
 
         echo "Finishing!"
     fi

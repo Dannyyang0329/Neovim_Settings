@@ -8,6 +8,7 @@ sudo apt-get install python3-pip
 # Usefull tools
 sudo apt-get install tree
 sudo apt-get install gnome-tweaks
+sudo apt-get install powerline
 
 # git cz 
 sudo apt-get install npm -y
