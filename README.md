@@ -8,6 +8,8 @@ Notice : the version of neovim should be >= `0.8.0`
 
 ## Install
 
+Testing on Ubuntu 22.04 and work successfully.
+
 Install git for cloning the repository  
 ```
 sudo apt-get install git
@@ -51,7 +53,7 @@ Fonts
 -> SauceCodePro NF Regular 18
 ```
 
-**Notice : When first open neovim editor, you should wait about 1 minute to let `mason` installing LSP.**
+**Notice : When first open neovim editor, you should wait about 1 minute to let `mason` installing LSP.**  
 
 
 ## Structure 
@@ -281,6 +283,8 @@ lua
 
 
 ## Mapping
+
+To know default neovim mapping, you can see this [Neovim Mapping](https://neovim.io/doc/user/quickref.html#top).
 
 * Normal mapping
 
