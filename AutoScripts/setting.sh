@@ -5,7 +5,7 @@ if ! dpkg-query -W git > /dev/null  ; then
     echo "Need package : git"
     exit 1
 elif ! dpkg-query -W neovim > /dev/null  ; then 
-    echo "Need package : git"
+    echo "Need package : neovim"
     exit 1
 else
     if [ -e "~/.config/nvim" -a -d "~/.config/nvim" ]; then
