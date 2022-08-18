@@ -12,7 +12,7 @@ else
         echo "!/.config/nvim is exist. Please make a backup or delete it."
     else
         # apply setting
-        cp -r nvim ~/.config/nvim
+        cp -r ~/Neovim_Settings/nvim ~/.config/nvim
 
         nvim -c :PackerSync
 
