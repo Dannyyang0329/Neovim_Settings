@@ -9,6 +9,7 @@ sudo apt-get install python3-pip
 sudo apt-get install tree
 sudo apt-get install gnome-tweaks
 sudo apt-get install powerline
+sudo apt-get install unzip
 
 # git cz 
 sudo apt-get install npm -y

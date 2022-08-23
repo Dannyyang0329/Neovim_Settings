@@ -35,9 +35,13 @@ cd Neovim_Settings/AutoScripts/
 ./install.sh
 ```
 
-`setting.sh` : Apply the setting  
+`setting.sh` : Apply the setting
 ```
 ./setting.sh
+```
+Notice : You may need to create `~/.config` folder to ensure `cp` command work well.
+```
+mkdir ~/.config
 ```
 
 Open gnome-tweak to change the caps behavior and font

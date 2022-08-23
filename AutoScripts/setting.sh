@@ -5,14 +5,14 @@ if ! dpkg-query -W git > /dev/null  ; then
     echo "Need package : git"
     exit 1
 elif ! dpkg-query -W neovim > /dev/null  ; then 
-    echo "Need package : git"
+    echo "Need package : neovim"
     exit 1
 else
     if [ -e "~/.config/nvim" -a -d "~/.config/nvim" ]; then
         echo "!/.config/nvim is exist. Please make a backup or delete it."
     else
         # apply setting
-        cp -r nvim ~/.config/nvim
+        cp -r ~/Neovim_Settings/nvim ~/.config/nvim
 
         nvim -c :PackerSync
 
