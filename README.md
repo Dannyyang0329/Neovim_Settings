@@ -210,6 +210,7 @@ lua
 | [folke/trouble.nvim](https://github.com/folke/trouble.nvim) | Show code troubles |
 | [gelguy/wilder.nvim](https://github.com/gelguy/wilder.nvim) | A more adventurous wildmenu |
 | [iamcco/markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim) | Markdown preview in web |
+| [turbio/bracey.vim](https://github.com/turbio/bracey.vim) | Html preview |
 
 ### UI
 |  Plugin  | Introduction |
@@ -273,6 +274,10 @@ lua
 * Trouble window
 
     ![](https://i.imgur.com/KBgC6WU.png)
+
+* Html preview (Bracey)
+
+    ![](https://i.imgur.com/NDJSknQ.png)
 
 ### UI
 
