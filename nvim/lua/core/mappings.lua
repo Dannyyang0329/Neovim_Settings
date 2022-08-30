@@ -19,3 +19,4 @@ vim.api.nvim_set_keymap('c', '<C-j>', '<Home>', {})                     -- Ctrl+
 vim.api.nvim_set_keymap('c', '<C-k>', '<End>', {})                      -- Ctrl+k : move to head
 vim.api.nvim_set_keymap('c', '<C-d>', '<BS>', {})                       -- Ctrl+d : move to tail
 
+

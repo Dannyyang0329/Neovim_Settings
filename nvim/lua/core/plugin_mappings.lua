@@ -27,6 +27,7 @@ vim.api.nvim_set_keymap('n', '<Leader>cs', ':Telescope colorscheme<CR>', {norema
 vim.api.nvim_set_keymap('n', '<Leader>km', ':Telescope keymaps<CR>', {noremap = true, silent = true})
 -- sniprun
 vim.api.nvim_set_keymap('v', '<Leader>r', ":SnipRun<CR>", {noremap = true})
+vim.api.nvim_set_keymap('n', '<Leader>ra', "ggVG:SnipRun<CR>`.", {noremap = true})
 -- trouble
 vim.api.nvim_set_keymap('n', '<Leader>tr', ":TroubleToggle<CR>", {noremap = true, silent = true})
 
@@ -37,3 +38,7 @@ vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', {noremap = true})  
 -- tabline
 vim.api.nvim_set_keymap('n', '<Tab>', ':TablineBufferNext<CR>', {noremap = true})           -- Tab : Jump to next buffer file
 vim.api.nvim_set_keymap('n', '<S-Tab>', ':TablineBufferPrevious<CR>', {noremap = true})     -- Shift+Tab : Jump to previous buffer file
+
+
+-- other
+vim.api.nvim_set_keymap('v', '<Leader>cb', ':y+<CR>', {noremap = true})     -- Shift+Tab : Jump to previous buffer file
