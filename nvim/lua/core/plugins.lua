@@ -59,7 +59,6 @@ return require('packer').startup(function(use)
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
     })
-    use { "turbio/bracey.vim", run = "cd ~/.local/share/nvim/site/pack/packer/start/bracey.vim && npm install --prefix server" }
 
     -- UI
     use { "kyazdani42/nvim-web-devicons" }

@@ -6,7 +6,8 @@ vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', {noremap = true})       -- Ctrl+
 vim.api.nvim_set_keymap('n', '<C-a>', 'GVgg', {noremap = true})         -- Ctrl+a : select all
 vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', {})                     -- Ctrl+s : save
 vim.api.nvim_set_keymap('n', '<C-q>', ':wq<CR>', {})                    -- Ctrl+q : save and quit
-vim.api.nvim_set_keymap('n', '<C-c>', ':bdelete<CR>', {})                    -- Ctrl+q : save and quit
+vim.api.nvim_set_keymap('n', '<C-c>', ':bdelete<CR>', {})               -- Ctrl+c : close current tab
+
 
 -- Insert mode
 vim.api.nvim_set_keymap('i', '<C-s>', '<Esc>:w<CR>', {})                -- Ctrl+s : save

@@ -12,6 +12,6 @@ require('lspconfig').html.setup{}
 require('lspconfig').jdtls.setup{}
 require('lspconfig').jsonls.setup{}
 require('lspconfig').marksman.setup{}
-require('lspconfig').sumneko_lua.setup{}
+-- require('lspconfig').sumneko_lua.setup{}
 require('lspconfig').pyright.setup{}
 require('lspconfig').sqlls.setup{}

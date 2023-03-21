@@ -3,6 +3,7 @@ vim.g.mapleader = ","
 -- copilot
 vim.g.copilot_no_tab_map = true
 vim.api.nvim_set_keymap("i", "<C-y>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+vim.api.nvim_set_keymap('n', '<Leader>co', ':Copilot<CR><C-w>L', {noremap = true, silent = true})
 
 -- editor
 -- nvim-comment
